@@ -1,0 +1,3 @@
+/home/andrei/Desktop/an3_sem1/lftc/lab2/atomic_lexic/cmake-build-debug/CMakeFiles/atomic_lexic.dir
+/home/andrei/Desktop/an3_sem1/lftc/lab2/atomic_lexic/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/andrei/Desktop/an3_sem1/lftc/lab2/atomic_lexic/cmake-build-debug/CMakeFiles/rebuild_cache.dir

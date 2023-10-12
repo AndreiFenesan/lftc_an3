@@ -1,0 +1,31 @@
+<program> ::= "int" "main(){" <statements> "return 0;}"
+<statements> ::= <statement> | <statement> <statements>
+<statement> ::= <declaration> | <read_statement> | <write_statement> | <assignemnt_statement> | <if_statement> | <while_statement> | <struct_type_definition> | <return_statement>";"
+<declarations> ::= <declaration>";" | <declaration>";"<declarations>
+<declaration> ::= <type> <identifier_list>
+<identifier_list> ::= <identifier> | <identifier> "," <identifier_list>
+<identifier> ::=[a-zA-Z_][a-zA-Z0-9_]*
+<type> ::= "int" | "char" | <struct_type>
+<struct_type> ::= "struct" <identifier>
+<read_statement> ::= "scanf(" \"<formatters>\" "," <variable_addresses> ")"
+<formatters> ::= <formatter> | <formatter> <formatters>
+<formatter> ::= "%d" | "%s" | "\n"
+<variable_addresses> ::= <variable_address> | <variable_address> "," <variable_addresses>
+<variable_address> ::= "&"<identifier>
+<write_statement> ::= "printf(" \"<formatters>\" "," <terms> ")"
+<assignment_statement> ::= <identifier> "=" <expr>
+<expr> ::= <term> | <term> <arithemtic_operation> <expr>
+<arithmetic_operation> ::= "+" | "-" | "*" | "/"
+<terms> ::= <term> | <term> "," <terms>
+<term> ::= <identifier> | <const_value>
+<const_value> ::= <numeric_const> | <char_const>
+<numeric_const> ::= [1-9][0-9]{0,14}
+<char_const> ::= "'" [a-zA-Z0-9] "'"
+<if_statement> ::= "if(" <condistions_list> ")" {" <statements> "}"
+<conditions_list> ::= <condition> | <condition> <logic_operator> <conditions_list>
+<logic_operator> ::= "&&" | "||"
+<condition> ::= <expr> <relational_operator> <expr> | <expr>
+<relational_operator> ::= ">" | "<" | ">=" | "<=" | "==" | "!="
+<while_statement> ::= "while(" <conditions_list> ") {" <statements> "}"
+<struct_type_definition> ::= "struct" <identifier> "{" <declarations> "}"
+<return_statement> ::= "return " <term>
